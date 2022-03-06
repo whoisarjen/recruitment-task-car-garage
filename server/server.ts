@@ -1,12 +1,9 @@
 import express from 'express';
-import { getAll } from './utils/query.utils';
+import helmet from 'helmet'
+import routes from './utils/routes.utils';
+
 const app = express();
-const port = 1337;
+app.use(helmet())
+routes(app);
 
-app.get('/', async (req, res) => {
-    res.send(await getAll());
-});
-
-app.listen(port, () => {
-    return console.log(`Express is listening at http://localhost:${port}`);
-});
+app.listen(1337, () => console.log(`Express is listening at http://localhost:${1337}`));
