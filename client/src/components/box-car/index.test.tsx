@@ -22,6 +22,16 @@ describe('Testing BoxCar', () => {
         render(<BoxCar {...FakeCar} />)
         screen.getByText(/5000/i)
     })
+
+    it('Expect to make box available for licensed = true', () => {
+        render(<BoxCar {...FakeCar} />)
+        expect(screen.getByTestId('BoxCar')).toHaveStyle(`background: rgb(47, 59, 82)`)
+    })
+
+    it('Expect to make box blocked for licensed = false', () => {
+        render(<BoxCar {...{ ...FakeCar, list_cars_vehicles_licensed: false }} />)
+        expect(screen.getByTestId('BoxCar')).toHaveStyle(`background: rgb(158, 158, 158)`)
+    })
 })
 
 export default {};

@@ -1,1 +1,1 @@
-export const isBoolean = (val: string | boolean) => (val === "true" || val === "True")
+export const isBoolean = (val: string | boolean) => (val === "true" || val === "True" || val === true)
