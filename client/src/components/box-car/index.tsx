@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { CarProps } from '../../interfaces/car.interface';
+import { isBoolean } from '../../utils/convert.utils';
 
 const Box = styled.div`
     width: calc(100% - 20px);
@@ -28,9 +29,9 @@ const Center = styled.div`
     text-align: center;
 `
 
-const BoxCar = ({ list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price }: CarProps) => {
+const BoxCar = ({ list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price, list_cars_vehicles_licensed }: CarProps) => {
     return (
-        <Box data-testid="BoxCar">
+        <Box data-testid="BoxCar" style={isBoolean(list_cars_vehicles_licensed) ? { background: '#2f3b52', cursor: 'pointer' } : { background: '#9e9e9e' }}>
             <Center>
                 <DirectionsCarIcon />
             </Center>
