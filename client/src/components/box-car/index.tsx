@@ -30,7 +30,7 @@ const Center = styled.div`
 
 const BoxCar = ({ list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price }: CarProps) => {
     return (
-        <Box>
+        <Box data-testid="BoxCar">
             <Center>
                 <DirectionsCarIcon />
             </Center>

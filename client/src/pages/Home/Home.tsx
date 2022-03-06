@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import BoxCar from "../components/box-car";
-import useCars from "../hooks/useCars";
-import { CarProps } from "../interfaces/car.interface";
+import BoxCar from "../../components/box-car";
+import { useCarsProps } from "../../hooks/useCars";
+import { CarProps } from "../../interfaces/car.interface";
 
 const Grid = styled.div`
     width: 100%;
@@ -15,9 +15,11 @@ const Grid = styled.div`
     }
 `
 
-const Home = () => {
-    const cars = useCars()
+interface BaseHomeProps {
+    cars: useCarsProps
+}
 
+const BaseHome = ({ cars }: BaseHomeProps) => {
     return (
         <Grid>
             {
@@ -30,4 +32,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default BaseHome;
