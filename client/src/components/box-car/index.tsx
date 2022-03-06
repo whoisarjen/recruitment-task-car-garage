@@ -36,7 +36,7 @@ const BoxCar = ({ list_cars_vehicles_make, list_cars_vehicles_model, list_cars_v
             </Center>
             <Content>
                 <div>{list_cars_vehicles_make} {list_cars_vehicles_model}</div>
-                <div>{list_cars_vehicles_price}PLN</div>
+                <div>{list_cars_vehicles_price}$</div>
             </Content>
             <Center />
         </Box>
