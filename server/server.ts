@@ -1,9 +1,10 @@
 import express from 'express';
+import { getAll } from './utils/query.utils';
 const app = express();
 const port = 1337;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.get('/', async (req, res) => {
+    res.send(await getAll());
 });
 
 app.listen(port, () => {
