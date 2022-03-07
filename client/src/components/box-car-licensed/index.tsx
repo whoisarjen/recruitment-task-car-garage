@@ -3,6 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { CarProps } from '../../interfaces/car.interface';
 import DialogCar from '../dialog-car';
+import IconButton from '@mui/material/IconButton';
 
 const Box = styled.div`
     width: calc(100% - 20px);
@@ -33,6 +34,11 @@ const Center = styled.div`
 const BoxCarLicensed = (car: CarProps) => {
     const { list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price } = car;
 
+    const addToCheckout = (e: any) => {
+        e.stopPropagation()
+
+    }
+
     return (
         <DialogCar {...{ car }}>
             <Box data-testid="BoxCar">
@@ -43,7 +49,11 @@ const BoxCarLicensed = (car: CarProps) => {
                     <div>{list_cars_vehicles_make} {list_cars_vehicles_model}</div>
                     <div>{list_cars_vehicles_price}$</div>
                 </Content>
-                <Center />
+                <Center onClick={addToCheckout}>
+                    <IconButton aria-label="add to checkout" color="error">
+                        <ShoppingCartIcon />
+                    </IconButton>
+                </Center>
             </Box>
         </DialogCar>
     )
