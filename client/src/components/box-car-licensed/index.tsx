@@ -5,8 +5,7 @@ import { CarProps } from '../../interfaces/car.interface';
 import DialogCar from '../dialog-car';
 import IconButton from '@mui/material/IconButton';
 import { useAppDispatch } from '../../hooks/useRedux';
-import { addToCheckout } from '../../redux/slices/checkout.slice'
-import useAxios from '../../hooks/useAxios';
+import useCheckout from '../../hooks/useCheckout';
 
 const Box = styled.div`
     width: 100%;
@@ -36,12 +35,11 @@ const Center = styled.div`
 
 const BoxCarLicensed = (car: CarProps) => {
     const { list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price } = car;
-    const dispatch = useAppDispatch()
-    const { post } = useAxios()
+    const { addObject } = useCheckout()
 
     const add = (e: any) => {
         e.stopPropagation()
-        // dispatch(addToCheckout(car))
+        addObject(car)
     }
 
     return (

@@ -16,8 +16,9 @@ export const checkoutSlicer = createSlice({
         addToCheckout: (state: any, action: { payload: CarProps }) => {
             state.checkout.push(action.payload)
         },
-        deleteFromCheckout: (state: any, action: { payload: CarProps[] }) => {
-            state.checkout = action.payload;
+        deleteFromCheckout: (state: any, action: { payload: CarProps }) => {
+            // state.checkout = action.payload;
+            console.log('code it')
         }
     }
 });
