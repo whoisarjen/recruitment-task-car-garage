@@ -2,21 +2,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './global.css';
 import MUI from './layout/MUI';
-import Navbar from './layout/navbar';
-import Home from './pages/Home';
 import { store } from './redux/store';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from './app';
 
 ReactDOM.render(
     <Provider store={store}>
         <MUI>
-            <Navbar>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                    </Routes>
-                </BrowserRouter>
-            </Navbar>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
         </MUI>
     </Provider>,
     document.getElementById('root')

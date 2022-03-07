@@ -89,7 +89,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-const BaseNavbar = ({ children, theme, open, setOpen, path }: useNavbarProps) => {
+const BaseNavbar = ({ children, theme, open, setOpen, path, navigateTo }: useNavbarProps) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -120,13 +120,13 @@ const BaseNavbar = ({ children, theme, open, setOpen, path }: useNavbarProps) =>
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <ListItem button key={"Warehouse"} selected={path === '/'}>
+                    <ListItem button key={"Warehouse"} selected={path === '/'}  onClick={() => navigateTo('/')}>
                         <ListItemIcon>
                             <WarehouseIcon />
                         </ListItemIcon>
                         <ListItemText primary={"Warehouse"} />
                     </ListItem>
-                    <ListItem button key={"Checkout"} selected={path === '/checkout'}>
+                    <ListItem button key={"Checkout"} selected={path === '/checkout'} onClick={() => navigateTo('/checkout')}>
                         <ListItemIcon>
                             <ShoppingBasketIcon />
                         </ListItemIcon>

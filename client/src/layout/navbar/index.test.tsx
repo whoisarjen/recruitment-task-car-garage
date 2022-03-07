@@ -3,10 +3,12 @@ import Navbar from ".";
 
 describe('Testing Navbar', () => {
     it('Expect to show children element', () => {
-        render(<Navbar><button data-testid="button">Button</button></Navbar>)
+        render(<Navbar navigateTo={jest.fn()}><button data-testid="button">Button</button></Navbar>)
 
         screen.getByTestId('button')
     })
+
+    it.todo('Check navigateTo behave')
 
     it('Rest is tested by MUI team', () => { })
 })
