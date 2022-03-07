@@ -6,7 +6,7 @@ import DialogCar from '../dialog-car';
 import IconButton from '@mui/material/IconButton';
 
 const Box = styled.div`
-    width: calc(100% - 20px);
+    width: 100%;
     background: #2f3b52;
     cursor: pointer;
     color: #fff;

@@ -8,7 +8,7 @@ import { useAppDispatch } from '../../hooks/useRedux';
 import { addToCheckout } from '../../redux/slices/checkout.slice'
 
 const Box = styled.div`
-    width: calc(100% - 20px);
+    width: 100%;
     background: #2f3b52;
     cursor: pointer;
     color: #fff;

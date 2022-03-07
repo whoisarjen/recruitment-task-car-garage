@@ -3,7 +3,7 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { CarProps } from '../../interfaces/car.interface';
 
 const Box = styled.div`
-    width: calc(100% - 20px);
+    width: 100%;
     background: #9e9e9e;
     color: #fff;
     padding: 10px;
