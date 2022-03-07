@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import BoxBannerCheckout from "../../components/box-banner-checkout";
 import BoxCarCheckout from "../../components/box-car-checkout";
-import { useCarsProps } from "../../hooks/useCars";
-import { CarProps } from "../../interfaces/car.interface";
+import { CheckoutAnyProps } from "../../interfaces/checkout.interface";
 
 const Grid = styled.div`
     width: 100%;
@@ -16,15 +15,15 @@ const Grid = styled.div`
     }
 `
 
-const BaseCheckout = ({ cars }: { cars: useCarsProps }) => {
+const BaseCheckout = ({ checkouts }: { checkouts: CheckoutAnyProps[] }) => {
     return (
         <>
             <BoxBannerCheckout />
             <Grid>
                 {
-                    cars.length > 0 &&
-                    cars.map((car: CarProps, index: number) =>
-                        <BoxCarCheckout key={car.list_cars_vehicles_id + index} car={car} />
+                    checkouts.length > 0 &&
+                    checkouts.map((checkout: CheckoutAnyProps) =>
+                        <BoxCarCheckout key={checkout.id} car={checkout} />
                     )
                 }
             </Grid>

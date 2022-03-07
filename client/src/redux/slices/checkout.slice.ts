@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CarProps } from "../../interfaces/car.interface";
+import { CheckoutAnyProps } from "../../interfaces/checkout.interface";
 
 interface InitialStateProps {
-    checkout: CarProps[]
+    checkout: CheckoutAnyProps[]
 }
 
 const initialState: InitialStateProps = {
@@ -13,16 +13,19 @@ export const checkoutSlicer = createSlice({
     name: "checkout",
     initialState,
     reducers: {
-        addToCheckout: (state: any, action: { payload: CarProps }) => {
+        addToCheckout: (state: any, action: { payload: CheckoutAnyProps }) => {
             state.checkout.push(action.payload)
         },
-        deleteFromCheckout: (state: any, action: { payload: CarProps }) => {
+        addArrayToCheckout: (state: any, action: { payload: CheckoutAnyProps[] }) => {
+            state.checkout = [...state.checkout, ...action.payload];
+        },
+        deleteFromCheckout: (state: any, action: { payload: CheckoutAnyProps }) => {
             // state.checkout = action.payload;
             console.log('code it')
         }
     }
 });
 
-export const { addToCheckout, deleteFromCheckout } = checkoutSlicer.actions;
+export const { addToCheckout, addArrayToCheckout, deleteFromCheckout } = checkoutSlicer.actions;
 
 export default checkoutSlicer.reducer;

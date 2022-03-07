@@ -1,6 +1,8 @@
-import { CarProps } from "../interfaces/car.interface";
+import { CheckoutAnyProps } from "../interfaces/checkout.interface";
 
-export const FakeCar: CarProps = {
+export const FakeCar: CheckoutAnyProps = {
+    id: 1213,
+    car_list_cars_vehicles_id: 1,
     list_cars_location: 'Poland',
     list_name: 'warehouse C',
     list_cars_vehicles_id: 1,

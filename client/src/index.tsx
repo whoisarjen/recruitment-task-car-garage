@@ -5,14 +5,17 @@ import MUI from './layout/MUI';
 import { store } from './redux/store';
 import { BrowserRouter } from "react-router-dom";
 import App from './app';
+import Redux from './layout/redux';
 
 ReactDOM.render(
     <Provider store={store}>
-        <MUI>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </MUI>
+        <Redux>
+            <MUI>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </MUI>
+        </Redux>
     </Provider>,
     document.getElementById('root')
 );

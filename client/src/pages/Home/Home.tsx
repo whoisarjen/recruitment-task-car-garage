@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import BoxCarLicensed from "../../components/box-car-licensed";
 import BoxCarUnlicensed from "../../components/box-car-unlicensed";
-import { useCarsProps } from "../../hooks/useCars";
 import { CarProps } from "../../interfaces/car.interface";
 import { isBoolean } from "../../utils/convert.utils";
 
@@ -17,7 +16,7 @@ const Grid = styled.div`
     }
 `
 
-const BaseHome = ({ cars }: { cars: useCarsProps }) => {
+const BaseHome = ({ cars }: { cars: CarProps[] }) => {
     return (
         <Grid>
             {

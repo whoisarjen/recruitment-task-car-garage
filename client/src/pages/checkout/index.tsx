@@ -2,9 +2,9 @@ import { useAppSelector } from "../../hooks/useRedux";
 import BaseCheckout from "./Checkout";
 
 const Checkout = () => {
-    const cars = useAppSelector(state => state.checkout.checkout)
+    const checkouts = useAppSelector(state => state.checkout.checkout)
 
-    return <BaseCheckout {...{ cars }} />
+    return <BaseCheckout {...{ checkouts }} />
 }
 
 export default Checkout;

@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import checkoutReducer from './slices/checkout.slice'
+import carsReducer from './slices/car.slice'
 
 export const store = configureStore({
     reducer: {
+        cars: carsReducer,
         checkout: checkoutReducer,
     },
     middleware: (getDefaultMiddleware) =>

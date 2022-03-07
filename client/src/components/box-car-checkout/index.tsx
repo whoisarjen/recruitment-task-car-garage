@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import { CarProps } from '../../interfaces/car.interface';
 import DialogCar from '../dialog-car';
 import IconButton from '@mui/material/IconButton';
 import useCheckout from '../../hooks/useCheckout';
+import { CheckoutAnyProps } from '../../interfaces/checkout.interface';
 
 const Box = styled.div`
     width: 100%;
@@ -32,7 +32,7 @@ const Center = styled.div`
     text-align: center;
 `
 
-const BoxCarCheckout = ({ car }: { car: CarProps }) => {
+const BoxCarCheckout = ({ car }: { car: CheckoutAnyProps }) => {
     const { deleteObject } = useCheckout()
     const { list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price } = car;
 
