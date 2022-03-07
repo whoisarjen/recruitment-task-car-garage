@@ -46,3 +46,14 @@ export const addCheckout = async (car: CarProps) => {
         id: res[0]['last_insert_rowid()']
     }
 }
+
+export const deleteCheckoutByID = async (id: number) => {
+    return new Promise((resolve, reject) => {
+        db.all(`DELETE FROM checkout WHERE id = ?`, [id], (err, rows) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(true)
+        })
+    });
+}

@@ -1,5 +1,5 @@
 import { Express } from 'express'
-import { addCheckout, getAllCars, getAllCheckout } from './query.utils';
+import { addCheckout, deleteCheckoutByID, getAllCars, getAllCheckout } from './query.utils';
 
 const routes = (app: Express) => {
     app.get('/', async (req, res) => {
@@ -13,6 +13,9 @@ const routes = (app: Express) => {
         res.send(await addCheckout(req.body));
     });
 
+    app.delete('/checkout/:id', async (req, res) => {
+        res.send(await deleteCheckoutByID(req.params.id));
+    });
 }
 
 export default routes;

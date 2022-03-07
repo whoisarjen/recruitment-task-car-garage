@@ -20,8 +20,7 @@ export const checkoutSlicer = createSlice({
             state.checkout = [...state.checkout, ...action.payload];
         },
         deleteFromCheckout: (state: any, action: { payload: CheckoutAnyProps }) => {
-            // state.checkout = action.payload;
-            console.log('code it')
+            state.checkout = state.checkout.filter((x: CheckoutAnyProps) => x.id != action.payload.id);
         }
     }
 });

@@ -5,7 +5,7 @@ import useAxios from "./useAxios"
 import { useAppDispatch } from "./useRedux"
 
 const useCheckout = () => {
-    const { post, get } = useAxios()
+    const { post, get, deleteAxios } = useAxios()
     const dispatch = useAppDispatch()
 
     const addObject = async (object: CarProps) => {
@@ -13,8 +13,9 @@ const useCheckout = () => {
         dispatch(addToCheckout({ ...object, ...res.data }))
     }
 
-    const deleteObject = async (car: CheckoutAnyProps) => {
-        // dispatch(deleteFromCheckout(car))
+    const deleteObject = async (object: CheckoutAnyProps) => {
+        await deleteAxios({ url: `/checkout/${object.id}` })
+        dispatch(deleteFromCheckout(object))
     }
 
     const getAllCheckouts = async () => {
