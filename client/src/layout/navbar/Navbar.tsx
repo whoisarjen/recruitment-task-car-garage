@@ -15,8 +15,18 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import WarehouseIcon from '@mui/icons-material/Warehouse';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavbarProps } from './useNavbar';
+import Badge, { BadgeProps } from '@mui/material/Badge';
+
+const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+    '& .MuiBadge-badge': {
+        right: -3,
+        top: 13,
+        border: `2px solid ${theme.palette.background.paper}`,
+        padding: '0 4px',
+    },
+}));
 
 const drawerWidth = 240;
 
@@ -89,7 +99,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-const BaseNavbar = ({ children, theme, open, setOpen, path, navigateTo }: useNavbarProps) => {
+const BaseNavbar = ({ children, theme, open, setOpen, path, navigateTo, checkout }: useNavbarProps) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -120,7 +130,7 @@ const BaseNavbar = ({ children, theme, open, setOpen, path, navigateTo }: useNav
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <ListItem button key={"Warehouse"} selected={path === '/'}  onClick={() => navigateTo('/')}>
+                    <ListItem button key={"Warehouse"} selected={path === '/'} onClick={() => navigateTo('/')}>
                         <ListItemIcon>
                             <WarehouseIcon />
                         </ListItemIcon>
@@ -128,7 +138,9 @@ const BaseNavbar = ({ children, theme, open, setOpen, path, navigateTo }: useNav
                     </ListItem>
                     <ListItem button key={"Checkout"} selected={path === '/checkout'} onClick={() => navigateTo('/checkout')}>
                         <ListItemIcon>
-                            <ShoppingBasketIcon />
+                            <StyledBadge badgeContent={checkout.length} color="error">
+                                <ShoppingCartIcon color="action" />
+                            </StyledBadge>
                         </ListItemIcon>
                         <ListItemText primary={"Checkout"} />
                     </ListItem>
