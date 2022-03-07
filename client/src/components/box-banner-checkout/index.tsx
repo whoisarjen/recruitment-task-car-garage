@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { useAppSelector } from '../../hooks/useRedux'
 import { CarProps } from '../../interfaces/car.interface'
@@ -17,7 +17,6 @@ const H1 = styled.h1`
 `
 
 const BoxBannerCheckout = () => {
-    const [sum, setSum] = useState(0)
     const cars = useAppSelector(state => state.checkout.checkout)
 
     const total = useMemo(() => {
@@ -25,12 +24,12 @@ const BoxBannerCheckout = () => {
         if (cars.length) {
             cars.forEach((car: CarProps) => money += parseFloat(car.list_cars_vehicles_price.toString()))
         }
-        setSum(money)
+        return money.toFixed(2)
     }, [cars])
 
     return (
         <Box>
-            <H1>TOTAL: {sum}$</H1>
+            <H1>TOTAL: {total}$</H1>
         </Box>
     )
 }
