@@ -4,6 +4,8 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { CarProps } from '../../interfaces/car.interface';
 import DialogCar from '../dialog-car';
 import IconButton from '@mui/material/IconButton';
+import { useAppDispatch } from '../../hooks/useRedux';
+import { addToCheckout } from '../../redux/slices/checkout.slice'
 
 const Box = styled.div`
     width: calc(100% - 20px);
@@ -33,10 +35,11 @@ const Center = styled.div`
 
 const BoxCarLicensed = (car: CarProps) => {
     const { list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price } = car;
+    const dispatch = useAppDispatch()
 
-    const addToCheckout = (e: any) => {
+    const add = (e: any) => {
         e.stopPropagation()
-
+        dispatch(addToCheckout(car))
     }
 
     return (
@@ -49,7 +52,7 @@ const BoxCarLicensed = (car: CarProps) => {
                     <div>{list_cars_vehicles_make} {list_cars_vehicles_model}</div>
                     <div>{list_cars_vehicles_price}$</div>
                 </Content>
-                <Center onClick={addToCheckout}>
+                <Center onClick={add}>
                     <IconButton aria-label="add to checkout" color="error">
                         <ShoppingCartIcon />
                     </IconButton>

@@ -13,7 +13,7 @@ export const checkoutSlicer = createSlice({
     name: "checkout",
     initialState,
     reducers: {
-        addToCheckout: (state: any, action: any) => {
+        addToCheckout: (state: any, action: { payload: CarProps }) => {
             state.checkout.push(action.payload)
         },
     }
