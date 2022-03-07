@@ -3,7 +3,7 @@ import BoxCar from ".";
 import { FakeCar } from "../../utils-test/car.utils";
 
 
-describe('Testing BoxCar', () => {
+describe('Testing BoxCarUnlicensed', () => {
     it('Expect to render component with OK', () => {
         render(<BoxCar {...FakeCar} />)
     })

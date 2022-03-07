@@ -3,7 +3,7 @@ import BoxCar from ".";
 import { FakeCar } from "../../utils-test/car.utils";
 
 
-describe('Testing BoxCarLicensed', () => {
+describe('Testing BoxCarCheckout', () => {
     it('Expect to render component with OK', () => {
         render(<BoxCar {...FakeCar} />)
     })
@@ -27,6 +27,8 @@ describe('Testing BoxCarLicensed', () => {
         render(<BoxCar {...FakeCar} />)
         expect(screen.getByTestId('BoxCar')).toHaveStyle(`background: rgb(47, 59, 82)`)
     })
+
+    it.todo('check delete button')
 })
 
 export default {};
