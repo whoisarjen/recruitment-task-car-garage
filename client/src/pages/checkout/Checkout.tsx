@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import BoxBannerCheckout from "../../components/box-banner-checkout";
 import BoxCarCheckout from "../../components/box-car-checkout";
 import { removeCarFromArrayByID } from "../../components/utils/car.utils";
 import { useCarsProps } from "../../hooks/useCars";
@@ -26,14 +27,17 @@ const BaseCheckout = ({ cars }: { cars: useCarsProps }) => {
     }
 
     return (
-        <Grid>
-            {
-                cars.length > 0 &&
-                cars.map((car: CarProps, index: number) =>
-                    <BoxCarCheckout key={car.list_cars_vehicles_id + index} car={car} removeCar={removeCar} />
-                )
-            }
-        </Grid>
+        <>
+            <BoxBannerCheckout />
+            <Grid>
+                {
+                    cars.length > 0 &&
+                    cars.map((car: CarProps, index: number) =>
+                        <BoxCarCheckout key={car.list_cars_vehicles_id + index} car={car} removeCar={removeCar} />
+                    )
+                }
+            </Grid>
+        </>
     )
 }
 
