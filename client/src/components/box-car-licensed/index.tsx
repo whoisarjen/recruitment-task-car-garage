@@ -4,7 +4,6 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { CarProps } from '../../interfaces/car.interface';
 import DialogCar from '../dialog-car';
 import IconButton from '@mui/material/IconButton';
-import { useAppDispatch } from '../../hooks/useRedux';
 import useCheckout from '../../hooks/useCheckout';
 
 const Box = styled.div`

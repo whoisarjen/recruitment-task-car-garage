@@ -10,6 +10,7 @@ const corsObject = { origin: process.env.ORIGIN, credentials: true }
 const app = express();
 app.use(cors(corsObject))
 app.use(helmet())
+app.use(express.json())
 
 
 
