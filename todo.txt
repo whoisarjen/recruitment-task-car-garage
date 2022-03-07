@@ -1,5 +1,0 @@
-+++ TESTS ON BACKEND
-
-ON FIRST LOAD WE WANT TO LOAD EVERYTHING TO REDUX (In this case it makes sense (but most of time no!)) (Need to comment it)
-
-Then we can remove cars base on id (so had to change the method too)
