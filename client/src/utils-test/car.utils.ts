@@ -1,6 +1,8 @@
 import { CarProps } from "../interfaces/car.interface";
 
 export const FakeCar: CarProps = {
+    list_cars_location: 'Poland',
+    list_name: 'warehouse C',
     list_cars_vehicles_id: 1,
     list_cars_vehicles_make: 'test',
     list_cars_vehicles_model: 'Kamil',

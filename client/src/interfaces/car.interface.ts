@@ -1,4 +1,6 @@
 export interface CarProps {
+    list_cars_location: string
+    list_name: string
     list_cars_vehicles_id: number
     list_cars_vehicles_make: string
     list_cars_vehicles_model: string
