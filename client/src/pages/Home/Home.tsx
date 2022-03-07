@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import BoxCar from "../../components/box-car";
+import BoxCarLicensed from "../../components/box-car-licensed";
+import BoxCarUnlicensed from "../../components/box-car-unlicensed";
 import { useCarsProps } from "../../hooks/useCars";
 import { CarProps } from "../../interfaces/car.interface";
+import { isBoolean } from "../../utils/convert.utils";
 
 const Grid = styled.div`
     width: 100%;
@@ -15,17 +17,17 @@ const Grid = styled.div`
     }
 `
 
-interface BaseHomeProps {
-    cars: useCarsProps
-}
-
-const BaseHome = ({ cars }: BaseHomeProps) => {
+const BaseHome = ({ cars }: { cars: useCarsProps }) => {
     return (
         <Grid>
             {
                 cars.length > 0 &&
                 cars.map((car: CarProps) =>
-                    <BoxCar key={car.list_cars_vehicles_id} {...car} />
+                    isBoolean(car.list_cars_vehicles_licensed)
+                        ?
+                        <BoxCarLicensed key={car.list_cars_vehicles_id} {...car} />
+                        :
+                        <BoxCarUnlicensed key={car.list_cars_vehicles_id} {...car} />
                 )
             }
         </Grid>

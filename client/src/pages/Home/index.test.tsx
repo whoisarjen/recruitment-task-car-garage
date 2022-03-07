@@ -18,6 +18,8 @@ describe('Testing home component', () => {
         render(<BaseHome {...{ cars: [FakeCar] }} />)
         screen.getByText(/test/i)
     })
+
+    it.todo('show right type of box')
 })
 
 export default {};
