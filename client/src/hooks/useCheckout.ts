@@ -10,11 +10,11 @@ const useCheckout = () => {
 
     const addObject = async (object: CarProps) => {
         const res = await post({ url: '/checkout/add', object })
-        dispatch(addToCheckout(res.data))
+        dispatch(addToCheckout({ ...object, ...res.data }))
     }
 
     const deleteObject = async (car: CheckoutAnyProps) => {
-        dispatch(deleteFromCheckout(car))
+        // dispatch(deleteFromCheckout(car))
     }
 
     const getAllCheckouts = async () => {

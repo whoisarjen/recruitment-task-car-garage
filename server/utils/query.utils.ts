@@ -14,7 +14,7 @@ export const getAllCars = async () => {
 
 export const getAllCheckout = async () => {
     return new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM checkout`, [], (err, rows) => {
+        db.all(`SELECT * FROM checkout JOIN warehouses ON checkout.car_list_cars_vehicles_id = warehouses.list_cars_vehicles_id`, [], (err, rows) => {
             if (err) {
                 reject(err);
             }
@@ -41,9 +41,8 @@ export const addCheckout = async (car: CarProps) => {
             resolve(res)
         })
     })
-
+    
     return {
-        id: res[0]['last_insert_rowid()'],
-        car_list_cars_vehicles_id: car.list_cars_vehicles_id,
+        id: res[0]['last_insert_rowid()']
     }
 }
