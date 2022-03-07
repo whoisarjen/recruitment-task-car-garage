@@ -14,7 +14,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import DevicesIcon from '@mui/icons-material/Devices';
+import WarehouseIcon from '@mui/icons-material/Warehouse';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useNavbarProps } from './useNavbar';
 
 const drawerWidth = 240;
@@ -107,7 +108,7 @@ const BaseNavbar = ({ children, theme, open, setOpen, path }: useNavbarProps) =>
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        <b>Smart</b> home
+                        <b>Frank</b>'s warehouse
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -119,11 +120,17 @@ const BaseNavbar = ({ children, theme, open, setOpen, path }: useNavbarProps) =>
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <ListItem button key={"Devices"} selected={path === '/'}>
+                    <ListItem button key={"Warehouse"} selected={path === '/'}>
                         <ListItemIcon>
-                            <DevicesIcon />
+                            <WarehouseIcon />
                         </ListItemIcon>
-                        <ListItemText primary={"Devices"} />
+                        <ListItemText primary={"Warehouse"} />
+                    </ListItem>
+                    <ListItem button key={"Checkout"} selected={path === '/checkout'}>
+                        <ListItemIcon>
+                            <ShoppingBasketIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={"Checkout"} />
                     </ListItem>
                 </List>
             </Drawer>
