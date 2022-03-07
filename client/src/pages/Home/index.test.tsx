@@ -19,7 +19,15 @@ describe('Testing home component', () => {
         screen.getByText(/test/i)
     })
 
-    it.todo('show right type of box')
+    it('Expect to make box available for licensed = true', () => {
+        render(<BaseHome {...{ cars: [FakeCar] }} />)
+        expect(screen.getByTestId('BoxCar')).toHaveStyle(`background: rgb(47, 59, 82)`)
+    })
+
+    it('Expect to make box available for licensed = true', () => {
+        render(<BaseHome {...{ cars: [{...FakeCar, list_cars_vehicles_licensed: false}] }} />)
+        expect(screen.getByTestId('BoxCar')).toHaveStyle(`background: rgb(47, 59, 82)`)
+    })
 })
 
 export default {};
