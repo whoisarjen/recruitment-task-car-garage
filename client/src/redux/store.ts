@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import checkoutReducer from './slices/checkout.slice'
 
 export const store = configureStore({
     reducer: {
+        checkout: checkoutReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
