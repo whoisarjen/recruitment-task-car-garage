@@ -34,7 +34,7 @@ const BoxCarLicensed = (car: CarProps) => {
     const { list_cars_vehicles_make, list_cars_vehicles_model, list_cars_vehicles_price } = car;
 
     return (
-        <DialogCar {...car}>
+        <DialogCar {...{ car }}>
             <Box data-testid="BoxCar">
                 <Center>
                     <DirectionsCarIcon />

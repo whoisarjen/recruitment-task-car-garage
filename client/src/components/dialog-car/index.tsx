@@ -9,11 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import { CarProps } from '../../interfaces/car.interface';
 
-interface DialogCarProps {
-    children: any
-}
-
-const DialogCar = ({ children }: DialogCarProps & CarProps) => {
+const DialogCar = ({ children, car }: { children: any, car: CarProps }) => {
     const [open, setOpen] = useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
