@@ -7,7 +7,7 @@ import cors from 'cors'
 
 const corsObject = { origin: process.env.ORIGIN, credentials: true }
 
-const app = express();
+export const app = express();
 app.use(cors(corsObject))
 app.use(helmet())
 app.use(express.json())
