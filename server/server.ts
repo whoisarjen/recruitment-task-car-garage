@@ -15,7 +15,7 @@ app.use(express.json())
 
 
 // In routes normally I would make middleware basic on url
-// Mostly I would do smth like this readToken -> schema (checking sent data) -> expectToken -> query
+// Mostly I would do smth like this readToken (from http cookie) -> schema (checking sent data) -> expectToken -> query
 // Every query, which change data in db would be based on token.id
 // Example https://github.com/whoisarjen/Juicify
 
