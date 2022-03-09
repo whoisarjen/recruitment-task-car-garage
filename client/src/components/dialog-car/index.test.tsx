@@ -1,12 +1,13 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import DialogCar from ".";
 import { FakeCar } from "../../utils-test/car.utils";
 import userEvent from '@testing-library/user-event'
 import { wait } from "@testing-library/user-event/dist/utils";
+import { setupComponent } from "../../utils-test/test.utils";
 
 describe('Testing DialogCar', () => {
     it('Expect to open dialog by clicking children element', () => {
-        render(<DialogCar {...{ car: FakeCar }}><button>Submit</button></DialogCar>)
+        setupComponent(<DialogCar {...{ car: FakeCar }}><button>Submit</button></DialogCar>)
 
         const button = screen.getByTestId('submit')
 
@@ -16,7 +17,7 @@ describe('Testing DialogCar', () => {
     })
 
     it('Expect to clsoe dialog', async () => {
-        render(<DialogCar {...{ car: FakeCar }}><button>Submit</button></DialogCar>)
+        setupComponent(<DialogCar {...{ car: FakeCar }}><button>Submit</button></DialogCar>)
 
         const button = screen.getByTestId('submit')
 

@@ -1,9 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import Navbar from ".";
+import { setupComponent } from "../../utils-test/test.utils";
 
 describe('Testing Navbar', () => {
     it('Expect to show children element', () => {
-        render(<Navbar navigateTo={jest.fn()}><button data-testid="button">Button</button></Navbar>)
+        setupComponent(<Navbar navigateTo={jest.fn()}><button data-testid="button">Button</button></Navbar>)
 
         screen.getByTestId('button')
     })
