@@ -28,8 +28,6 @@ describe('Testing BoxCarCheckout', () => {
         setupComponent(<BoxCarCheckout {...{ car: FakeCar }} />)
         expect(screen.getByTestId('BoxCar')).toHaveStyle(`background: rgb(47, 59, 82)`)
     })
-
-    it.todo('check delete button')
 })
 
 export default {};

@@ -8,9 +8,7 @@ describe('Testing Navbar', () => {
 
         screen.getByTestId('button')
     })
-
-    it.todo('Check navigateTo behave')
-
+    
     it('Rest is tested by MUI team', () => { })
 })
 
